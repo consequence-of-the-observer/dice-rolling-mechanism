@@ -6,6 +6,11 @@
         <script src="dice_amount.js"></script>
         <script src="dice_rolling.js"></script>
         <script src="dice_path.js"></script>
+
+        <script src="lib/p5.js"></script>
+        <script src="lib/p5.sound.js"></script>
+        <script src="lib/planck.min.js"></script>
+        <script src="lib/p5play.js"></script>
     </head>
 
     <body>
@@ -16,69 +21,77 @@
                 </h3>
             </div>
 
-            <div>
-                <div class="dice" id="d4">
-                    <p>D4:</p>
-                    <div class="manage">
-                        <button onClick="decreaseAmount('d4')">-</button>
-                        <p id="d4_amount">0</p>
-                        <button onClick="increaseAmount('d4')">+</button>
+            <div id="dice_selector">
+                <div class="section">
+                    <div class="dice" id="d4">
+                        <p>D4:</p>
+                        <div class="manage">
+                            <button onClick="decreaseAmount('d4')">-</button>
+                            <p id="d4_amount">0</p>
+                            <button onClick="increaseAmount('d4')">+</button>
+                        </div>
+                    </div>
+                    <div class="dice" id="d6">
+                        <p>D6:</p>
+                        <div class="manage">
+                            <button onClick="decreaseAmount('d6')">-</button>
+                            <p id="d6_amount">0</p>
+                            <button onClick="increaseAmount('d6')">+</button>
+                        </div>
+                    </div>
+                    <div class="dice" id="d8">
+                        <p>D8:</p>
+                        <div class="manage">
+                            <button onClick="decreaseAmount('d8')">-</button>
+                            <p id="d8_amount">0</p>
+                            <button onClick="increaseAmount('d8')">+</button>
+                        </div>
                     </div>
                 </div>
-                <div class="dice" id="d6">
-                    <p>D6:</p>
-                    <div class="manage">
-                        <button onClick="decreaseAmount('d6')">-</button>
-                        <p id="d6_amount">0</p>
-                        <button onClick="increaseAmount('d6')">+</button>
+                <div class="section">
+                    <div class="dice" id="d10">
+                        <p>D10:</p>
+                        <div class="manage">
+                            <button onClick="decreaseAmount('d10')">-</button>
+                            <p id="d10_amount">0</p>
+                            <button onClick="increaseAmount('d10')">+</button>
+                        </div>
                     </div>
-                </div>
-                <div class="dice" id="d8">
-                    <p>D8:</p>
-                    <div class="manage">
-                        <button onClick="decreaseAmount('d8')">-</button>
-                        <p id="d8_amount">0</p>
-                        <button onClick="increaseAmount('d8')">+</button>
+                    <div class="dice" id="d100">
+                        <p>D100:</p>
+                        <div class="manage">
+                            <button onClick="decreaseAmount('d100')">-</button>
+                            <p id="d100_amount">0</p>
+                            <button onClick="increaseAmount('d100')">+</button>
+                        </div>
                     </div>
-                </div>
-                <div class="dice" id="d10">
-                    <p>D10:</p>
-                    <div class="manage">
-                        <button onClick="decreaseAmount('d10')">-</button>
-                        <p id="d10_amount">0</p>
-                        <button onClick="increaseAmount('d10')">+</button>
+                    <div class="dice" id="d12">
+                        <p>D12:</p>
+                        <div class="manage">
+                            <button onClick="decreaseAmount('d12')">-</button>
+                            <p id="d12_amount">0</p>
+                            <button onClick="increaseAmount('d12')">+</button>
+                        </div>
                     </div>
-                </div>
-                <div class="dice" id="d100">
-                    <p>D100:</p>
-                    <div class="manage">
-                        <button onClick="decreaseAmount('d100')">-</button>
-                        <p id="d100_amount">0</p>
-                        <button onClick="increaseAmount('d100')">+</button>
+                    <div class="dice" id="d20">
+                        <p>D20:</p>
+                        <div class="manage">
+                            <button onClick="decreaseAmount('d20')">-</button>
+                            <p id="d20_amount">0</p>
+                            <button onClick="increaseAmount('d20')">+</button>
+                        </div>
                     </div>
-                </div>
-                <div class="dice" id="d12">
-                    <p>D12:</p>
-                    <div class="manage">
-                        <button onClick="decreaseAmount('d12')">-</button>
-                        <p id="d12_amount">0</p>
-                        <button onClick="increaseAmount('d12')">+</button>
                     </div>
-                </div>
-                <div class="dice" id="d20">
-                    <p>D20:</p>
-                    <div class="manage">
-                        <button onClick="decreaseAmount('d20')">-</button>
-                        <p id="d20_amount">0</p>
-                        <button onClick="increaseAmount('d20')">+</button>
-                    </div>
-                </div>
             </div>
 
             <div>
                 <br>
                 <button onClick="rollDice()">Roll Dice!</button>
             </div>
+        </div>
+
+        <div id="screen">
+            <script src="dice_sketch.js"></script>
         </div>
     </body>
 </html>
