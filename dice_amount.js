@@ -37,4 +37,5 @@ function determineDice() {
     }
 
     console.log(array);
+    return array;
 }

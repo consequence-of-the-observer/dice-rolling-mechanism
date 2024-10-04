@@ -88,3 +88,35 @@ var dice_mappings = {
 function random(min, max) {
     return Math.random() * (max - min) + min;
 }
+
+function rollDice() {
+    let types = determineDice();
+    let types_val = [];
+    let val = 0;
+
+    for(let i = 0; i < types.length; i++) {
+        if(types[i] === 'd4') {
+            types_val.push(Math.floor(random(1,5)));
+        }else if(types[i] === 'd6') {
+            types_val.push(Math.floor(random(1,7)));
+        }else if(types[i] === 'd8') {
+            types_val.push(Math.floor(random(1,9)));
+        }else if(types[i] === 'd10') {
+            types_val.push(Math.floor(random(1,11)));
+        }else if(types[i] === 'd100') {
+            types_val.push(Math.floor(random(1,11))*10);
+        }else if(types[i] === 'd12') {
+            types_val.push(Math.floor(random(1,13)));
+        }else if(types[i] === 'd20') {
+            types_val.push(Math.floor(random(1,21)));
+        }
+    }
+
+    console.log(types_val);
+
+    for(let i = 0; i < types_val.length; i++) {
+        val += types_val[i];
+    }
+
+    console.log(val);
+}
