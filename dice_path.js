@@ -1,4 +1,4 @@
-function map_path(type, final) {
+function mapPath(type, final) {
     let type_max = {
         'd4': 5,
         'd6': 7,
@@ -10,21 +10,21 @@ function map_path(type, final) {
     };
 
     let type_direction_max = {
-        'd4': 4,
-        'd6': 5,
-        'd8': null,
+        'd4': 3,
+        'd6': 4,
+        'd8': 3,
         'd10': null,
         'd100': null,
-        'd12': null,
+        'd12': 5,
         'd20': 3
     };
 
     let start;
 
     if(type === 'd100') {
-        start = Math.floor(random(0,type_max[type]))*10;
+        start = Math.floor(random(1,type_max[type]))*10;
     }else {
-        start = Math.floor(random(0, type_max[type]));
+        start = Math.floor(random(1, type_max[type]));
     }
 
     let finish = final;
@@ -40,13 +40,14 @@ function map_path(type, final) {
         let test_val = start;
         let test_path = [];
         for(let i = 0; i < path.length; i++) {
+            console.log(type, test_val, path[i])
             test_val = dice_mappings[type][test_val][path[i]];
             test_path.push(test_val);
             //console.log(test_val);
         }
         console.log(test_path);
 
-        if(test_val === result) {
+        if(test_val === finish) {
             console.log("path determined");
           
             for(let i = 0; i < test_path.length; i++) {
