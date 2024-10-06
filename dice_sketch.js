@@ -39,7 +39,7 @@ function draw() {
             for(let i = 0; i < final_vals.length; i++) {
                 dice_path[i] = mapPath(dice_type[i], final_vals[i]);
                 dice_state[i] = 0;
-                dice[i] = new Sprite(200,200,40,40);
+                dice[i] = new Sprite(200,200,50,50);
                 dice[i].text = dice_path[i][dice_state[i]];
             }
         }
