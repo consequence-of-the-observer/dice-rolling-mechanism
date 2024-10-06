@@ -4,7 +4,7 @@ function mapPath(type, final) {
         'd6': 7,
         'd8': 9,
         'd10': 11,
-        'd100': 11,
+        'd100': 10,
         'd12': 13,
         'd20': 21
     };
@@ -13,8 +13,8 @@ function mapPath(type, final) {
         'd4': 3,
         'd6': 4,
         'd8': 3,
-        'd10': null,
-        'd100': null,
+        'd10': 4,
+        'd100': 4,
         'd12': 5,
         'd20': 3
     };
@@ -22,7 +22,7 @@ function mapPath(type, final) {
     let start;
 
     if(type === 'd100') {
-        start = Math.floor(random(1,type_max[type]))*10;
+        start = Math.floor(random(0,type_max[type]))*10;
     }else {
         start = Math.floor(random(1, type_max[type]));
     }
